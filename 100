@@ -8683,7 +8683,7 @@ RunService.Heartbeat:Connect(function()
                 else waitTime=0.1 end
             else waitTime=0.1 end
         end
-    else waitTime=0.5 end
+    else waitTime=0.1 end
     if tick()-Last_Shot < waitTime then return end
     local vals=tool:FindFirstChild("Values"); local ammo=vals and vals:FindFirstChild("SERVER_Ammo")
     if not (ammo and ammo.Value>0) then return end
@@ -8696,11 +8696,11 @@ RunService.Heartbeat:Connect(function()
     ZF_H:FireServer("🧈",tool,key,1,part,Valid_Pair.Hit,dir)
     if tool:FindFirstChild("Hitmarker") then tool.Hitmarker:Fire(part) end
     if HitLogEnabled then
-        local dmg,mult=17,1.35
-        if gunConfig then dmg=gunConfig.Damage or 17; mult=gunConfig.HeadshotMultiplier or 1.35
+        local dmg,mult=50,1.35
+        if gunConfig then dmg=gunConfig.Damage or 50; mult=gunConfig.HeadshotMultiplier or 1.35
         elseif tool:FindFirstChild("Config") then
             local ok,c=pcall(require,tool.Config)
-            if ok then dmg=c.Damage or 17; mult=c.HeadshotMultiplier or 1.35 end
+            if ok then dmg=c.Damage or 50; mult=c.HeadshotMultiplier or 1.35 end
         end
         local fd=(dmg*mult)-(math.floor((Valid_Pair.Origin-Valid_Pair.Hit).Magnitude/50)*2)
         local mp=GetLocalRealPosition()

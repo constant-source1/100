@@ -8700,7 +8700,7 @@ RunService.Heartbeat:Connect(function()
         if gunConfig then dmg=gunConfig.Damage or 50; mult=gunConfig.HeadshotMultiplier or 1.35
         elseif tool:FindFirstChild("Config") then
             local ok,c=pcall(require,tool.Config)
-            if ok then dmg=c.Damage or 50; mult=c.HeadshotMultiplier or 1.35 end
+            if ok then dmg=c.Damage or 50; mult.HeadshotMultiplier or 1.35 end
         end
         local fd=(dmg*mult)-(math.floor((Valid_Pair.Origin-Valid_Pair.Hit).Magnitude/50)*2)
         local mp=GetLocalRealPosition()

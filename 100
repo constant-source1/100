@@ -8696,7 +8696,7 @@ RunService.Heartbeat:Connect(function()
     ZF_H:FireServer("🧈",tool,key,1,part,Valid_Pair.Hit,dir)
     if tool:FindFirstChild("Hitmarker") then tool.Hitmarker:Fire(part) end
     if HitLogEnabled then
-        local dmg,mult=60,1.35
+        local dmg,mult=50,1.35
         if gunConfig then dmg=gunConfig.Damage or 50; mult=gunConfig.HeadshotMultiplier or 1.35
         elseif tool:FindFirstChild("Config") then
             local ok,c=pcall(require,tool.Config)
